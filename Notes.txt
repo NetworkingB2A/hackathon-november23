@@ -9,6 +9,6 @@ created a database.py file that is the connection to the database
 https://www.linode.com/docs/guides/how-to-install-use-postgresql-ubuntu-20-04/#using-postgresql
 
 creating a database by hand
-
+sudo su - postgres
 createdb QuizApplicationYT
 psql QuizApplicationYT
