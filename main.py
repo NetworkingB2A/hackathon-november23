@@ -58,3 +58,10 @@ async def create_question(question: QuestionBase, db: db_dependency):
 def read_root():
     spam = f"This app will allow you to post a question. {__name__}"
     return spam
+
+@app.get("/questions")
+async def get_questions(db: db_dependency):
+    result = db.query(models.Questions).all()
+    if not result:
+        raise HTTPException(status_code=404, detail="not sure if this works or not")
+    return result
