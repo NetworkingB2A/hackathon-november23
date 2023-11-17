@@ -62,6 +62,4 @@ def read_root():
 @app.get("/questions")
 async def get_questions(db: db_dependency):
     result = db.query(models.Questions).all()
-    if not result:
-        raise HTTPException(status_code=404, detail="not sure if this works or not")
     return result
